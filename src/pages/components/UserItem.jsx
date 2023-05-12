@@ -1,4 +1,4 @@
-export default function UserItem({users}) {
+export const UserItem = ({users}) => {
     return(<li className="userItem">
         <p>{users.id}</p>
         <p>{users.firstName}{' '}{users.lastName}</p>

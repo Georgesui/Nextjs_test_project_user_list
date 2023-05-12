@@ -1,6 +1,6 @@
-import UserItem from "./UserItem";
+import {UserItem} from "./UserItem";
 
-export default function UserList({users}) {
+export const UserList = ({users})=> {
     return(
         <ul className="containerForItems">
             {
