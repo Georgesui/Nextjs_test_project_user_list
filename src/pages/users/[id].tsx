@@ -9,10 +9,6 @@ interface PropsType {
 export default function UserPage ({user}:PropsType) {
 	const {query, back} = useRouter();
 
-	// const backButton = () =>{
-	// 	back
-	// }
-
 	return (
 		<div>
 			<div>Id: {query.id} </div>
@@ -28,7 +24,13 @@ export default function UserPage ({user}:PropsType) {
 	)
 }
 
-export async function getStaticProps(context:any) {
+interface StaticProps {
+params:{
+	id: number
+}
+}
+
+export async function getStaticProps(context:StaticProps) {
 	const user = await getOneUser(context.params.id)
 	return {
 		props: {
