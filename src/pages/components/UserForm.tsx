@@ -1,6 +1,7 @@
 import React, {FC, useState } from 'react';
 import Link from 'next/link';
 import { User} from '../services/user';
+import {SEARCH_USER_URL} from '../services/index'
 
 const UserForm:FC =  () => {
 
@@ -13,7 +14,7 @@ const UserForm:FC =  () => {
 	
 	if(filtered) {
 		try {
-			const res = await fetch(`https://dummyjson.com/users/search?q=${filteredData}`);
+			const res = await fetch(`${SEARCH_USER_URL}${filteredData}`);
 			if(!res.ok) throw new Error('Error fetching filter')
 			const filtered = await res.json();
 			setUserFlitered(filtered.users)
