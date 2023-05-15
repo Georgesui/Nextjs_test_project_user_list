@@ -39,6 +39,10 @@
   border: 1px solid black;
 }
 
+.userItem.itemOnPage {
+  align-items: flex-start;
+}
+
 .listContainer {
   list-style: none;
   display: flex;
@@ -67,4 +71,8 @@
 .inputForm {
   margin-left: 76px;
   border-radius: 5px;
+}
+
+.paginationEvenButton {
+  cursor: pointer;
 }

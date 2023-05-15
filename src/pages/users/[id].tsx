@@ -10,7 +10,7 @@ export default function UserPage ({user}:PropsType) {
 	const {query, back} = useRouter();
 	
 	return (
-		<div>
+		<div className="userItem itemOnPage">
 			<div>Id of Item: {query.id} </div>
 			<div>
 				<div>First Name: {user.firstName}</div>
