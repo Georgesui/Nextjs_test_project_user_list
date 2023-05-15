@@ -14,11 +14,11 @@ const UserForm:FC =  () => {
 	if(filtered) {
 		try {
 			const res = await fetch(`https://dummyjson.com/users/search?q=${filteredData}`);
-			if(!res.ok) throw new Error('Error fetching')
+			if(!res.ok) throw new Error('Error fetching filter')
 			const filtered = await res.json();
 			setUserFlitered(filtered.users)
 		}
-		catch (err) {throw new Error('Error fetching')}
+		catch (err) {throw new Error('Error fetching filter')}
 	} else {
 		setUserFlitered([])
 	}

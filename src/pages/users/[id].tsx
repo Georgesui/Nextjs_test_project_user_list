@@ -6,6 +6,12 @@ interface PropsType {
 	user: User
 }
 
+interface StaticProps {
+	params:{
+		id: number
+	}
+	}
+
 export default function UserPage ({user}:PropsType) {
 	const {query, back} = useRouter();
 	
@@ -21,12 +27,6 @@ export default function UserPage ({user}:PropsType) {
 			</div>
 		</div>
 	)
-}
-
-interface StaticProps {
-params:{
-	id: number
-}
 }
 
 export async function getStaticProps(context:StaticProps) {
