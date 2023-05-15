@@ -4,12 +4,12 @@ import { User} from '../services/user';
 
 const UserForm:FC =  () => {
 
-	const [filteredData, SetfilteredData] = useState<string>('');
+	const [filteredData, setfilteredData] = useState<string>('');
 	const [userFiltered, setUserFlitered] = useState<User[]>([]);
 
 	const resultOfFormSearch = async (event: React.ChangeEvent<HTMLInputElement>) => {
 		const filtered = event.target.value;
-	SetfilteredData(filtered)
+		setfilteredData(filtered)
 	
 	if(filtered) {
 		try {
