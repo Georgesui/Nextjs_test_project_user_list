@@ -1,5 +1,5 @@
 import React, {FC, useMemo} from 'react';
-import {paginationData, paginationButtons} from '../services/user'
+import {paginationData} from '../services/user'
 
 const Pagination:FC<paginationData> = ({setPage, currentPage, page,endPage,  siblingCount = 1 }) => {
 
