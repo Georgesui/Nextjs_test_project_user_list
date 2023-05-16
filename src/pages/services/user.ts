@@ -15,10 +15,6 @@ export interface UserProps {
 	limit: number;
 }
 
-export type UserDetailsForOneItem = {
-	users: User[];
-}
-
 export type userData = {
 	allUsers: UserProps;
 }
