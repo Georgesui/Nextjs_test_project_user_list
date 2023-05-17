@@ -1,10 +1,10 @@
 import React, {useEffect, useState } from 'react';
 import {userData,} from '../services/user';
 import { useRouter } from 'next/router';
-import Pagination from '../components/Pagination'
+import Pagination from '../../components/Pagination'
 import { GetServerSidePropsContext } from 'next';
-import UserForm from '../components/UserForm';
-import UserItem from '../components/UserItem'
+import UserForm from '../../components/UserForm';
+import UserItem from '../../components/UserItem'
 
 const totalPages = 10;
 

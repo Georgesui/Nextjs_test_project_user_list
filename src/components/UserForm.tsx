@@ -1,6 +1,6 @@
 import React, {FC, useState } from 'react';
 import Link from 'next/link';
-import { User} from '../services/user';
+import { User} from '../pages/services/user';
 
 const UserForm:FC =  () => {
 
