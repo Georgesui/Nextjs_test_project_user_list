@@ -2,7 +2,6 @@ import React, {useEffect, useState } from 'react';
 import {userData,} from '../services/user';
 import { useRouter } from 'next/router';
 import Pagination from '../components/Pagination'
-import {USER_URL} from '../services/index'
 import { GetServerSidePropsContext } from 'next';
 import UserForm from '../components/UserForm';
 import UserItem from '../components/UserItem'
@@ -44,7 +43,7 @@ export const getServerSideProps = async (context:GetServerSidePropsContext) => {
 	try{
 		const {query} = context;
 		const pageNumber = parseInt(query.page as string, 10);
-		const response = await fetch(`${USER_URL}=${totalPages}&skip=${(pageNumber-1)*totalPages}`);
+		const response = await fetch(`${process.env.USER_URL}=${totalPages}&skip=${(pageNumber-1)*totalPages}`);
 		const allUsers = await response.json();
 		return {
 			props: {

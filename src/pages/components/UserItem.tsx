@@ -7,7 +7,7 @@ const UserItem = ({users}:UserDetailsForOneItem) => {
   {users.map((el)=> (<li key={el.id} className="userItem">
 		<Link href={`/users/${el.id}`} className="userItemLink">
 					<p>{el.id}</p>
-					<p >{el.firstName}{' '}{el.lastName}</p>
+					<p >{`${el.firstName} ${el.lastName}`}</p>
 					</Link>
 		<Image alt='image' src={el.image} width={100} height={100}/>
 	 </li>)

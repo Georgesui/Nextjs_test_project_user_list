@@ -55,7 +55,7 @@ const Pagination:FC<paginationData> = ({setPage, currentPage, page,endPage,  sib
 
   return (
 	<ul className='listContainer'>
-			{paginationButtons.map((el:number,index:number)=>
+			{paginationButtons.map((el,index)=>
 			<li key={index} className='paginationButton'>
 			<button onClick={()=>ourPage(el)} className='paginationEvenButton'>{el}</button>
 			</li>)}

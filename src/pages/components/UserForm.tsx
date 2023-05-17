@@ -1,7 +1,6 @@
 import React, {FC, useState } from 'react';
 import Link from 'next/link';
 import { User} from '../services/user';
-import {SEARCH_USER_URL} from '../services/index'
 
 const UserForm:FC =  () => {
 
@@ -11,10 +10,10 @@ const UserForm:FC =  () => {
 	const resultOfFormSearch = async (event: React.ChangeEvent<HTMLInputElement>) => {
 		const filtered = event.target.value;
 		setfilteredData(filtered)
-	
+		
 	if(filtered) {
 		try {
-			const res = await fetch(`${SEARCH_USER_URL}${filteredData}`);
+			const res = await fetch(`${process.env.SEARCH_USER_URL}${filteredData}`);
 			if(!res.ok) throw new Error('Error fetching filter')
 			const filtered = await res.json();
 			setUserFlitered(filtered.users)

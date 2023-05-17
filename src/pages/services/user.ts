@@ -1,6 +1,3 @@
-import {USER_URL} from './index';
-import { USER_ON_PAGE } from './index';
-
 export interface User {
 	id: number,
 	firstName: string, 
@@ -45,12 +42,12 @@ export type paginationButtons = {
 }
 
 export async function getAllUsers(): Promise<User[]> {
-	const response = await fetch(`${USER_URL}`);
+	const response = await fetch(`${process.env.USER_URL}`);
 	const data = await response.json();
 	return data.users;
 }
 
 export async function getOneUser(id:number):Promise<User> {
-	const response = await fetch(`${USER_ON_PAGE}/${id}`);
+	const response = await fetch(`${process.env.USER_ON_PAGE}/${id}`);
 	return response.json();
 }
